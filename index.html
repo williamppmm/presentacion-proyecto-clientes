@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación Casino la Fortuna</title>
+    <meta name="description" content="Documentación completa del sistema Casino la Fortuna">
+    <meta name="keywords" content="casino, documentación, manual técnico, manual usuario">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .toc {
+        position: sticky;
+        top: 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      @media print {
+        .toc {
+          display: none;
+        }
+        @page {
+          margin: 2cm;
+        }
+      }
+      /* Estilos base actualizados */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        color: #333;
+      }
+
+      /* Espaciado y estructura */
+      section {
+        margin: 40px 0;
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+      }
+
+      /* Componentes */
+      .code-block {
+        background: #f8f8f8;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+
+      .code-block pre {
+        margin: 0;
+        white-space: pre-wrap;
+      }
+
+      /* Tablas mejoradas */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+
+      /* Estilos de alineación y estructura */
+      .center { text-align: center; }
+      .justified { text-align: justify; }
+      
+      /* Estilos de componentes */
+      .logo { max-width: 150px; margin: 20px auto; }
+      .video-container { 
+        position: relative;
+        width: 100%;
+        max-width: 560px;
+        margin: 20px auto;
+      }
+      .video-container img { width: 100%; height: auto; }
+      
+      /* Estilos de tablas */
+      th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+      th { background-color: #f5f5f5; }
+      
+      /* Estilos de secciones */
+      .section { margin: 40px 0; }
+      .sub-section { margin: 20px 0; }
+      
+      /* Estilos adicionales */
+      .code { 
+        font-family: monospace;
+        background: #f8f8f8;
+        padding: 2px 4px;
+      }
+      hr { margin: 30px 0; border-top: 1px solid #eee; }
+      /* Estilos de listas */
+      .code-block pre {
+        background-color: #f4f4f4;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        overflow-x: auto;
+      }
+      .thumbnail {
+        width: 300px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: transform 0.3s;
+      }
+      .thumbnail:hover {
+        transform: scale(1.1);
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      .modal-content {
+        display: block;
+        margin: auto;
+        max-width: 90%;
+        max-height: 90%;
+      }
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .close:hover {
+        color: #ccc;
+      }
+      .thumbnail {
+        width: 300px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: transform 0.3s;
+      }
+      .thumbnail:hover {
+        transform: scale(1.1);
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        max-width: 560px;
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      .close:hover {
+        color: #ccc;
+      }
+      .toc a.active {
+        font-weight: bold;
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <h1>Documentación del proceso de implantación de software siguiendo estándares de calidad</h1>
+
+      <img src="https://i.ibb.co/3TdcjGF/logo-SENA.png" alt="logo-SENA" class="logo">
+
+      <h2>Presentado por:</h2>
+      <p>
+        <strong>Penélope Noreña Ramos</strong><br>
+        <strong>Hernán Darío Pérez Higuita</strong><br>
+        <strong>William Pérez Muñoz</strong>
+      </p>
+
+      <h3>Instructor:</h3>
+      <p><strong>Ing. Jhon Jairo Donato</strong></p>
+
+      <h2>Servicio Nacional de Aprendizaje - SENA</h2>
+      <h3>Centro de Gestión de Mercados, Logística y Tecnologías de la Información</h3>
+      <h3>Regional Distrito Capital</h3>
+
+      <h4>Tecnología en Análisis y Desarrollo de Software</h4>
+      <h4>Ficha: 2758315.</h4>
+      <h4>2024</h4>
+    </div>
+
+    <hr>
+
+    <nav aria-label="Tabla de contenidos">
+      <div class="toc">
+        <h2>Contenido</h2>
+        <ul>
+          <li><a href="#introduccion">Introducción</a></li>
+          <li><a href="#objetivo">Objetivo del Documento</a></li>
+          <li><a href="#equipo-trabajo">Equipo de Trabajo</a></li>
+          <li><a href="#mantenimiento">Plan de Mantenimiento</a></li>
+          <li><a href="#migracion">Proceso de Migración</a></li>
+          <li><a href="#manual-tecnico">Manual Técnico</a></li>
+          <li><a href="#manual-usuario">Manual de Usuario</a></li>
+          <li><a href="#problemas-comunes">Resolución de Problemas Comunes</a></li>
+          <li><a href="#soporte-actualizaciones">Soporte y Actualizaciones</a></li>
+          <li><a href="#anexos">Anexos</a></li>
+          <li><a href="#glosario">Glosario de Términos</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <h1>Prefacio</h1>
+
+    <div class="justified">
+      <h2 id="introduccion">Introducción</h2>
+      <p>Este documento ha sido diseñado con base en el formato propuesto, adaptándolo a las necesidades específicas de nuestro proyecto, <em>Casino la Fortuna</em>. Este software, actualmente en fase de desarrollo, representa nuestra visión de un sistema integral para la gestión y administración de operaciones de casino.</p>
+      <p>Aunque algunas secciones del documento incluyen elementos proyectados o teóricos, reflejan nuestro compromiso por adoptar buenas prácticas en el diseño, desarrollo e implementación de software. Este trabajo no solo busca documentar el proceso de implantación, sino también servir como guía técnica y estratégica que facilite la culminación exitosa del proyecto.</p>
+    </div>
+
+    <h3>Video Promocional del Software</h3>
+    <div class="video-container">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/jXgIpYTIzCo"
+        title="Video Promocional"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <p class="center"><em>Video Promocional del Software Casino la Fortuna</em></p>
+    </div>
+
+    <!-- Modal -->
+    <div id="videoModal" class="modal">
+      <span class="close" onclick="closeVideoModal()">&times;</span>
+      <div class="modal-content">
+        <iframe 
+          id="videoIframe"
+          width="560"
+          height="315"
+          src=""
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="justified">
+      <h2 id="objetivo">Objetivo del Documento</h2>
+      <p>El objetivo principal de este documento es estructurar los lineamientos necesarios para garantizar una implantación eficiente del software, siguiendo estándares de calidad reconocidos. Se proyecta como una herramienta que permita:</p>
+
+      <ol>
+        <li><strong>Documentación Integral:</strong>
+          <ul>
+            <li>Procesos clave de desarrollo</li>
+            <li>Procedimientos de mantenimiento</li>
+            <li>Protocolos de soporte técnico</li>
+          </ul>
+        </li>
+        <li><strong>Aseguramiento de Calidad:</strong>
+          <ul>
+            <li>Establecimiento de estándares de calidad</li>
+            <li>Métricas de rendimiento</li>
+            <li>Procesos de verificación y validación</li>
+          </ul>
+        </li>
+        <li><strong>Gestión Estratégica:</strong>
+          <ul>
+            <li>Marco para toma de decisiones</li>
+            <li>Planificación de recursos</li>
+            <li>Gestión de riesgos</li>
+          </ul>
+        </li>
+        <li><strong>Evolución del Sistema:</strong>
+          <ul>
+            <li>Base técnica para futuras iteraciones</li>
+            <li>Guía para mejoras continuas</li>
+            <li>Adaptabilidad a nuevos requerimientos</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+    
+    <h3>Documentación Casino la Fortuna - Alcance y Equipo de Trabajo</h3>
+
+    <div class="justified">
+      <h2>Alcance del Documento</h2>
+      <p>Este documento abarca:</p>
+      <ul class="scope-list">
+        <li>Procesos de implantación y migración</li>
+        <li>Planes de mantenimiento y soporte</li>
+        <li>Manuales técnicos y de usuario</li>
+        <li>Procedimientos de respaldo y recuperación</li>
+        <li>Documentación de arquitectura y configuraciones</li>
+      </ul>
+
+      <p>Con esta documentación buscamos no solo cumplir con las expectativas actuales, sino también preparar el camino hacia un sistema robusto, confiable y alineado con las mejores prácticas del sector.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="equipo-trabajo">Equipo de Trabajo</h2>
+
+    <h3>Integrantes del Proyecto</h3>
+
+    <div class="team-member">
+      <h4>William Pérez Muñoz</h4>
+      <p><strong>Rol:</strong> Coordinador del Proyecto, Backend Developer</p>
+      <p><strong>Responsabilidades:</strong></p>
+      <ul class="responsibilities">
+        <li>Configuración del servidor (Node.js, Supabase)</li>
+        <li>Gestión de API REST</li>
+        <li>Aseguramiento de la integración con Supabase</li>
+        <li>Coordinación del equipo de desarrollo</li>
+      </ul>
+    </div>
+
+    <div class="team-member">
+      <h4>Hernán Darío Pérez Higuita</h4>
+      <p><strong>Rol:</strong> Frontend Developer</p>
+      <p><strong>Responsabilidades:</strong></p>
+      <ul class="responsibilities">
+        <li>Implementación de interfaces responsivas (React, Bootstrap)</li>
+        <li>Gestión del estado global</li>
+        <li>Validaciones del cliente</li>
+        <li>Desarrollo de componentes reutilizables</li>
+      </ul>
+    </div>
+
+    <div class="team-member">
+      <h4>Penélope Noreña Ramos</h4>
+      <p><strong>Rol:</strong> QA y DevOps</p>
+      <p><strong>Responsabilidades:</strong></p>
+      <ul class="responsibilities">
+        <li>Configuración de pipeline CI/CD</li>
+        <li>Pruebas de carga, funcionalidad y rendimiento (JMeter)</li>
+        <li>Configuración de backups automáticos</li>
+        <li>Monitoreo y optimización del sistema</li>
+      </ul>
+    </div>
+
+    <h3>Diseño del plan de mantenimiento y soporte del software</h3>
+
+    <h2 id="mantenimiento">Plan de Mantenimiento</h2>
+
+    <div class="maintenance-section">
+      <h3>Mantenimiento Preventivo</h3>
+      <p>El mantenimiento preventivo busca garantizar que el sistema <em>Casino la Fortuna</em> opere de manera óptima, minimizando la probabilidad de fallos mediante acciones planificadas.</p>
+
+      <h4>Actividades principales:</h4>
+
+      <div class="activities-list">
+        <div class="activity-item">
+          <h5>1. Monitoreo del sistema:</h5>
+          <ul>
+            <li>Configuración de alertas automáticas en <em>Render Logs</em> para detectar comportamientos anómalos</li>
+            <li>Análisis semanal de métricas del backend y frontend para identificar cuellos de botella</li>
+            <li>Revisión constante de métricas y logs para identificar patrones anómalos</li>
+            <li>Monitoreo en tiempo real del rendimiento del sistema usando <em>Supabase Insights</em></li>
+            <li>Detección temprana de posibles problemas mediante alertas configuradas</li>
+          </ul>
+        </div>
+
+        <div class="activity-item">
+          <h5>2. Actualización de componentes:</h5>
+          <ul>
+            <li>Actualización mensual de dependencias críticas mediante <code>npm audit</code></li>
+            <li>Pruebas de compatibilidad en un entorno de staging utilizando Postman</li>
+            <li>Actualización sistemática de dependencias del backend Node.js y frontend React</li>
+            <li>Verificación de compatibilidad entre componentes y Bootstrap</li>
+            <li>Documentación de cambios significativos en Notion o Google Docs</li>
+          </ul>
+        </div>
+
+        <div class="activity-item">
+          <h5>3. Optimización de la base de datos:</h5>
+          <ul>
+            <li>Verificación trimestral de índices y consultas en Supabase</li>
+            <li>Depuración de datos de pruebas o redundantes</li>
+            <li>Revisión del tamaño de tablas y particiones para mejorar tiempos de respuesta</li>
+            <li>Mantenimiento de consultas optimizadas</li>
+            <li>Monitoreo del rendimiento de las consultas</li>
+          </ul>
+        </div>
+
+        <div class="activity-item">
+          <h5>4. Pruebas de rendimiento:</h5>
+          <ul>
+            <li>Ejecución trimestral de pruebas de carga con JMeter para simular diferentes niveles de uso</li>
+            <li>Validación de tiempos de respuesta inferiores a 2 segundos bajo alta demanda</li>
+            <li>Simulación de usuarios simultáneos</li>
+            <li>Monitoreo de rendimiento durante horarios pico para garantizar estabilidad</li>
+            <li>Identificación y resolución de cuellos de botella</li>
+          </ul>
+        </div>
+
+        <div class="activity-item">
+          <h5>5. Respaldos regulares:</h5>
+          <ul>
+            <li>Configuración de backups automáticos diarios en Supabase</li>
+            <li>Verificación semanal de integridad de los respaldos almacenados en Google Drive</li>
+            <li>Respaldo de archivos críticos</li>
+            <li>Retención de copias por 30 días con políticas claras de restauración</li>
+            <li>Pruebas periódicas de restauración para validar integridad</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="maintenance-section">
+      <h3>Mantenimiento Correctivo</h3>
+      <p>El mantenimiento correctivo se centra en resolver errores detectados en el sistema <em>Casino la Fortuna</em>, asegurando la continuidad operativa y previniendo problemas recurrentes.</p>
+
+      <h4>Actividades principales:</h4>
+
+      <div class="activities-list">
+        <div class="activity-item">
+          <h5>1. Corrección de bugs:</h5>
+          <ul>
+            <li>Reparación de errores detectados en el backend desarrollado en Node.js</li>
+            <li>Solución de problemas de visualización en componentes React del frontend</li>
+            <li>Verificación de correcciones implementadas mediante pruebas automatizadas en Cypress</li>
+            <li>Documentación detallada de soluciones aplicadas</li>
+            <li>Seguimiento post-implementación de correcciones</li>
+          </ul>
+        </div>
+
+        <div class="activity-item">
+          <h5>2. Compatibilidad:</h5>
+          <ul>
+            <li>Pruebas periódicas en navegadores como Chrome, Edge y Firefox</li>
+            <li>Resolución de incompatibilidades entre diferentes versiones de librerías utilizadas</li>
+            <li>Ajustes para garantizar el rendimiento en dispositivos móviles y de escritorio</li>
+            <li>Adaptación a diferentes dispositivos y resoluciones</li>
+            <li>Validación de componentes Bootstrap en diferentes plataformas</li>
+          </ul>
+        </div>
+
+        <div class="activity-item">
+          <h5>3. Reparación de datos:</h5>
+          <ul>
+            <li>Identificación y resolución de inconsistencias en registros almacenados en Supabase</li>
+            <li>Restauración desde copias de seguridad verificadas</li>
+            <li>Implementación de validaciones adicionales para prevenir errores futuros</li>
+            <li>Recuperación de integridad en los datos</li>
+            <li>Validación de información restaurada</li>
+          </ul>
+        </div>
+
+        <div class="activity-item">
+          <h5>4. Parches críticos:</h5>
+          <ul>
+            <li>Aplicación inmediata de actualizaciones de seguridad sugeridas por dependencias o frameworks</li>
+            <li>Evaluación de vulnerabilidades emergentes mediante herramientas como OWASP ZAP</li>
+            <li>Mitigación de vulnerabilidades emergentes</li>
+            <li>Documentación detallada de las acciones tomadas</li>
+            <li>Seguimiento post-implementación de parches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3>Alcance del plan</h3>
+    <table>
+      <tr>
+        <th>Ítem</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Nombre del software</td>
+        <td>Casino la Fortuna</td>
+      </tr>
+      <tr>
+        <td>Componentes incluidos</td>
+        <td>
+          - Backend (Node.js, Render)<br>
+          - Frontend (React, Bootstrap, Vercel)<br>
+          - Base de datos (Supabase)
+        </td>
+      </tr>
+      <tr>
+        <td>Usuarios objetivo</td>
+        <td>
+          - Personal administrativo (gerentes)<br>
+          - Operadores del casino (crupieres)<br>
+          - Clientes registrados
+        </td>
+      </tr>
+    </table>
+
+    <h3>Indicadores de Desempeño (KPIs)</h3>
+    <table class="kpi-table">
+      <tr>
+        <th>Indicador</th>
+        <th>Descripción</th>
+        <th>Objetivo</th>
+      </tr>
+      <tr>
+        <td>Tiempo promedio de resolución de incidencias (TPRI)</td>
+        <td>Tiempo promedio para corregir errores reportados</td>
+        <td>
+          < 4 horas para incidencias críticas<br>
+          < 24 horas para incidencias medias<br>
+          < 72 horas para incidencias bajas
+        </td>
+      </tr>
+      <tr>
+        <td>Disponibilidad del sistema</td>
+        <td>Porcentaje de tiempo que el software está operativo</td>
+        <td>
+          > 99.9% de disponibilidad mensual<br>
+          Máximo 43 minutos de downtime al mes
+        </td>
+      </tr>
+      <tr>
+        <td>Número de errores recurrentes</td>
+        <td>Reducción de problemas ya registrados</td>
+        <td>
+          < 5% de incidencias son problemas recurrentes<br>
+          Tendencia descendente mes a mes
+        </td>
+      </tr>
+      <tr>
+        <td>Tasa de respaldo exitoso</td>
+        <td>Porcentaje de copias de seguridad sin fallos</td>
+        <td>
+          > 99.99% de backups exitosos<br>
+          Verificación diaria de integridad
+        </td>
+      </tr>
+    </table>
+
+    <h2 id="migracion">Proceso de Migración</h2>
+
+    <section class="phase-section">
+      <h3 class="phase-title">1. Definición de Migración</h3>
+      <p>La migración de datos implica transferir información desde un sistema de origen a un nuevo sistema de destino, asegurando coherencia, exactitud y funcionalidad en el entorno implementado. En el proyecto <em>Casino la Fortuna</em>, este proceso garantiza la continuidad operativa y la integridad de datos como usuarios, transacciones y registros históricos.</p>
+    </section>
+
+    <section class="phase-section">
+      <h3 class="phase-title">2. Fases del Proceso de Migración</h3>
+
+      <div class="sub-section">
+        <h3>Planificación:</h3>
+        
+        <h4>Análisis del entorno:</h4>
+        <ul>
+          <li>Sistema de origen: <span class="emphasis">Base de datos PostgreSQL</span> actualmente operativa</li>
+          <li>Sistema de destino: <span class="emphasis">Supabase</span> con infraestructura en la nube</li>
+          <li>Evaluación de requisitos técnicos:
+            <ul>
+              <li>Espacio necesario para la base de datos</li>
+              <li>Herramientas de migración compatibles</li>
+              <li>Tiempo estimado de inactividad: <span class="emphasis">4 horas</span></li>
+              <li>Estimación de recursos y personal necesario</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Clasificación de datos:</h4>
+        <div class="data-list">
+          <p><strong>Datos críticos:</strong></p>
+          <ul>
+            <li>Información de usuarios registrados</li>
+            <li>Historial de transacciones financieras</li>
+            <li>Configuración del sistema</li>
+            <li>Perfiles de acceso y roles</li>
+          </ul>
+
+          <p><strong>Datos secundarios:</strong></p>
+          <ul>
+            <li>Logs de auditoría y seguridad</li>
+            <li>Archivos temporales o registros históricos</li>
+            <li>Documentación del sistema</li>
+            <li>Respaldos anteriores</li>
+          </ul>
+        </div>
+
+        <h4>Definición de objetivos:</h4>
+        <ul>
+          <li>Realizar una migración completa sin pérdida de información</li>
+          <li>Validación de integridad al <span class="emphasis">100%</span> de los datos migrados</li>
+          <li>Documentación detallada para replicar o auditar el proceso</li>
+          <li>Tiempo máximo de inactividad: 4 horas</li>
+          <li>Plan de rollback en caso necesario</li>
+        </ul>
+
+        <h4>Selección de herramientas:</h4>
+        <ul>
+          <li><span class="code">Supabase CLI:</span> Para exportación e importación eficiente de datos</li>
+          <li><span class="code">Node.js con pg-migrate:</span> Scripts personalizados</li>
+          <li><span class="code">Apache NiFi:</span> Para procesos ETL complejos</li>
+          <li><span class="code">pgAdmin:</span> Herramienta para validación manual</li>
+          <li><span class="code">Postman:</span> Verificación de APIs conectadas a la base de datos</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h3>Preparación:</h3>
+
+        <h4>Mapeo de datos:</h4>
+        <ul>
+          <li>Diseño de esquemas equivalentes entre tablas en PostgreSQL y Supabase</li>
+          <li>Definición de transformaciones de datos, como ajustes en tipos de datos</li>
+          <li>Validación de reglas de negocio existentes</li>
+          <li>Documentación de reglas de mapeo</li>
+          <li>Verificación de constraints y relaciones</li>
+        </ul>
+
+        <h4>Pruebas piloto:</h4>
+        <ul>
+          <li>Migración de un subconjunto de datos críticos para validación</li>
+          <li>Pruebas de integridad referencial y rendimiento de consultas</li>
+          <li>Verificación de transformaciones</li>
+          <li>Registro de resultados y métricas</li>
+          <li>Medición de tiempos de ejecución</li>
+        </ul>
+
+        <h4>Limpieza de datos:</h4>
+        <ul>
+          <li>Eliminación de registros duplicados o redundantes</li>
+          <li>Normalización de formatos (fechas, campos de texto)</li>
+          <li>Validación de integridad antes de la migración completa</li>
+          <li>Corrección de datos inconsistentes</li>
+          <li>Actualización de referencias obsoletas</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h3>Ejecución:</h3>
+
+        <h4>Extracción:</h4>
+        <ul>
+          <li>Respaldo completo del sistema de origen antes de iniciar</li>
+          <li>Exportación por módulos: usuarios, transacciones y configuraciones</li>
+          <li>Verificación de completitud de datos</li>
+          <li>Registro de métricas de exportación</li>
+          <li>Validación de checksums</li>
+        </ul>
+
+        <h4>Transformación:</h4>
+        <ul>
+          <li>Aplicación de transformaciones necesarias para cumplir con el esquema destino</li>
+          <li>Verificación de consistencia tras cada transformación</li>
+          <li>Conversión de formatos de datos</li>
+          <li>Actualización de referencias</li>
+          <li>Validación de transformaciones realizadas</li>
+        </ul>
+
+        <h4>Carga:</h4>
+        <ul>
+          <li>Importación secuencial de datos usando <span class="code">Supabase CLI</span></li>
+          <li>Validación de índices y restricciones</li>
+          <li>Actualización de índices</li>
+          <li>Verificación de constraints</li>
+          <li>Registro de métricas de importación</li>
+        </ul>
+
+        <h4>Resolución de errores:</h4>
+        <ul>
+          <li>Registro de problemas detectados durante la migración</li>
+          <li>Aplicación de correcciones inmediatas y ajustes en los scripts</li>
+          <li>Documentación de soluciones aplicadas</li>
+          <li>Registro de lecciones aprendidas</li>
+          <li>Plan de contingencia ejecutado si necesario</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h3>Validación:</h3>
+
+        <h4>Pruebas de integridad:</h4>
+        <ul>
+          <li>Comparación de totales de registros entre origen y destino</li>
+          <li>Validación de relaciones entre tablas críticas (usuarios y transacciones)</li>
+          <li>Verificación de consistencia de datos</li>
+          <li>Pruebas de consultas críticas</li>
+          <li>Validación de sumas de control</li>
+        </ul>
+
+        <h4>Pruebas funcionales:</h4>
+        <ul>
+          <li>Verificación del correcto funcionamiento de las APIs conectadas</li>
+          <li>Pruebas manuales en las interfaces del frontend</li>
+          <li>Validación de cálculos críticos</li>
+          <li>Pruebas de rendimiento</li>
+          <li>Verificación de reportes clave</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h3>Cierre:</h3>
+
+        <h4>Documentación:</h4>
+        <ul>
+          <li>Registro detallado de cada etapa del proceso</li>
+          <li>Documentación de incidencias y correcciones aplicadas</li>
+          <li>Registro de configuraciones realizadas</li>
+          <li>Manual de procedimientos actualizado</li>
+          <li>Documentación de lecciones aprendidas</li>
+        </ul>
+
+        <h4>Monitoreo:</h4>
+        <ul>
+          <li>Seguimiento post-migración durante las primeras 24 horas</li>
+          <li>Evaluación del rendimiento en entornos reales</li>
+          <li>Detección y corrección de anomalías</li>
+          <li>Medición de KPIs establecidos</li>
+          <li>Análisis comparativo con métricas anteriores</li>
+        </ul>
+      </div>
+    </section>
+
+    <h3>Proceso de Respaldo de Datos</h3>
+
+    <p class="intro-text">
+      El respaldo de datos asegura la disponibilidad y recuperación de la información del software Casino la Fortuna. 
+      Este proceso es fundamental para garantizar la continuidad del negocio y la integridad de los datos.
+    </p>
+
+    <h2 class="phase-title">Fases del Respaldo de Datos</h2>
+
+    <section class="backup-section">
+      <h3>Planificación:</h3>
+
+      <div class="sub-section">
+        <h4>Identificación de datos críticos:</h4>
+        <ul>
+          <li>Información de usuarios y perfiles de acceso</li>
+          <li>Registros de transacciones financieras</li>
+          <li>Historial de operaciones de juego</li>
+          <li>Configuraciones del sistema</li>
+          <li>Logs de auditoría y seguridad</li>
+          <li>Documentación del sistema</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h4>Frecuencia:</h4>
+        <ul>
+          <li>Respaldos incrementales: Cada 6 horas</li>
+          <li>Respaldos completos: Diarios (durante horario de menor actividad)</li>
+          <li>Respaldos semanales: Almacenamiento a largo plazo</li>
+          <li>Snapshots de base de datos: Cada 12 horas</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h4>Elección de medios de almacenamiento:</h4>
+        <ul>
+          <li><span class="emphasis">Principal:</span> Supabase Cloud Storage con replicación</li>
+          <li><span class="emphasis">Secundario:</span> Google Cloud Storage para redundancia</li>
+          <li><span class="emphasis">Terciario:</span> Servidor local encriptado para respaldos críticos</li>
+          <li><span class="emphasis">Archivado:</span> Almacenamiento frío para datos históricos</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="backup-section">
+      <h3>Ejecución:</h3>
+
+      <div class="sub-section">
+        <h4>Automatización:</h4>
+        <ul>
+          <li>Implementación de scripts de respaldo automático</li>
+          <li>Configuración de tareas programadas en Supabase</li>
+          <li>Sistema de rotación automática de respaldos</li>
+          <li>Notificaciones automáticas de estado</li>
+          <li>Monitoreo continuo del proceso</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h4>Cifrado y seguridad:</h4>
+        <ul>
+          <li>Encriptación AES-256 para todos los respaldos</li>
+          <li>Autenticación de dos factores para acceso</li>
+          <li>Segregación de respaldos por nivel de sensibilidad</li>
+          <li>Políticas de retención según normativa</li>
+          <li>Control de acceso basado en roles</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h4>Pruebas de restauración:</h4>
+        <ul>
+          <li>Verificación semanal de restauración completa</li>
+          <li>Pruebas mensuales de recuperación parcial</li>
+          <li>Simulacros de desastre trimestrales</li>
+          <li>Documentación de procedimientos de recuperación</li>
+          <li>Validación de integridad post-restauración</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="backup-section">
+      <h3>Validación:</h3>
+
+      <div class="sub-section">
+        <h4>Pruebas periódicas:</h4>
+        <ul>
+          <li>Verificación diaria de integridad de respaldos</li>
+          <li>Comprobación de checksums</li>
+          <li>Validación de estructura de datos</li>
+          <li>Testing de consistencia de información</li>
+          <li>Pruebas de recuperación selectiva</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h4>Monitoreo continuo:</h4>
+        <ul>
+          <li>Implementación de sistema de alertas en tiempo real</li>
+          <li>Monitoreo de espacio de almacenamiento</li>
+          <li>Seguimiento de tiempos de respaldo</li>
+          <li>Registro de eventos y errores</li>
+          <li>Análisis de tendencias y patrones</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="backup-section">
+      <h3>Actualización:</h3>
+
+      <div class="sub-section">
+        <h4>Revisión del plan:</h4>
+        <ul>
+          <li>Evaluación mensual de efectividad</li>
+          <li>Ajuste de frecuencias según necesidades</li>
+          <li>Optimización de procesos de respaldo</li>
+          <li>Actualización de políticas de retención</li>
+          <li>Incorporación de mejores prácticas</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h4>Registro:</h4>
+        <ul>
+          <li>Documentación detallada de cada respaldo</li>
+          <li>Registro de restauraciones realizadas</li>
+          <li>Historial de incidencias y soluciones</li>
+          <li>Mantenimiento de logs de auditoría</li>
+          <li>Seguimiento de métricas de rendimiento</li>
+        </ul>
+      </div>
+    </section>
+
+    <h2 id="manual-tecnico">Manual Técnico</h2>
+    
+    <p>El <strong>Manual Técnico</strong> está dirigido a administradores y desarrolladores del sistema Casino la Fortuna, proporcionando información detallada sobre el funcionamiento interno del software y sus componentes técnicos.</p>
+
+    <section class="section">
+      <h2>Estructura del Manual Técnico</h2>
+
+      <div class="subsection">
+        <h3>Introducción</h3>
+
+        <h4>Propósito del software</h4>
+        <ul class="tech-list">
+          <li>Sistema integral de gestión para operaciones de casino</li>
+          <li>Control de transacciones en tiempo real</li>
+          <li>Gestión de usuarios y perfiles</li>
+          <li>Monitoreo de actividades de juego</li>
+          <li>Generación de reportes y análisis</li>
+          <li>Módulos avanzados:
+            <ul>
+              <li>Sistema de contabilidad integrado</li>
+              <li>Estadísticas de ganancias y pérdidas</li>
+              <li>Análisis predictivo de comportamiento</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Público objetivo</h4>
+        <ul class="tech-list">
+          <li>Desarrolladores del sistema</li>
+          <li>Administradores de plataforma</li>
+          <li>Personal de soporte técnico</li>
+          <li>Equipo de seguridad informática</li>
+          <li>Auditores del sistema</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Arquitectura del Software</h2>
+      
+      <div class="subsection">
+        <h3>Diagrama de arquitectura</h3>
+        <div class="code-block">
+          <pre>
+Frontend
+├── React App
+│   ├── Material UI
+│   ├── React Query
+│   └── Redux Toolkit
+│
+Backend
+├── Node.js
+│   ├── Express
+│   ├── Prisma ORM
+│   └── Auth Module
+│
+Database
+└── Supabase
+├── PostgreSQL
+└── Storage</pre>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Tecnologías utilizadas</h3>
+
+        <h4>Frontend</h4>
+        <ul class="tech-list">
+          <li>React 18.x con TypeScript</li>
+          <li>Material UI para componentes</li>
+          <li>Redux Toolkit para estado global</li>
+          <li>React Query para caché y fetching</li>
+          <li>CSS personalizado para estilos específicos</li>
+        </ul>
+
+        <h4>Backend</h4>
+        <ul class="tech-list">
+          <li>Node.js 16.x</li>
+          <li>Express.js para API REST</li>
+          <li>Prisma como ORM</li>
+          <li>JWT para autenticación</li>
+          <li>Winston para logging</li>
+        </ul>
+
+        <h4>Base de datos</h4>
+        <ul class="tech-list">
+          <li>PostgreSQL 14 en Supabase</li>
+          <li>Supabase para autenticación y storage</li>
+          <li>Redis para caché</li>
+          <li>Sistemas de backup automático</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Detalles de Configuración</h2>
+
+      <div class="subsection">
+        <h3>Configuración del servidor (Render/Vercel)</h3>
+        <div class="code-block">
+          <pre>
+        # Nginx configuration
+        server {
+          listen 80;
+          server_name casino-fortuna.com;
+
+          location / {
+            proxy_pass http://localhost:3000;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+          }
+
+          location /api {
+            proxy_pass http://localhost:5000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+          }
+        }</pre>
+        </div>
+
+        <h3>Configuración de despliegue</h3>
+        <div class="code-block">
+          <pre>
+            # Backend deployment en Render
+            render deploy
+
+            # Frontend deployment en Vercel
+            vercel deploy
+          </pre>
+        </div>
+
+        <h3>Configuración de seguridad</h3>
+        <div class="code-block">
+          <pre>
+          // Auth middleware
+          const authMiddleware = (req, res, next) => {
+            const token = req.headers['authorization'];
+
+            if (!token) {
+              return res.status(403).send('Acceso denegado');
+            }
+
+            try {
+              const decoded = jwt.verify(token, process.env.JWT_SECRET);
+              req.user = decoded;
+              next();
+            } catch (err) {
+              res.status(401).send('Token inválido');
+            }
+          };
+
+          // Security configuration
+          const securityConfig = {
+            roles: ['admin', 'operator', 'user'],
+            permissions: {
+              admin: ['read', 'write', 'delete'],
+              operator: ['read', 'write'],
+              user: ['read']
+            },
+            encryption: {
+              algorithm: 'aes-256-gcm',
+              keyLength: 32
+            }
+          }</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Estructura del Código</h2>
+
+      <div class="subsection">
+        <h3>Organización de carpetas</h3>
+        <div class="code-block">
+          <pre>
+casino-fortuna/
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── assets/
+│       ├── components/
+│       ├── pages/
+│       ├── services/
+│       ├── hooks/
+│       ├── store/
+│       └── utils/
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── middlewares/
+│   ├── services/
+│   └── utils/
+└── docs/</pre>
+        </div>
+
+        <h3>Gestión de dependencias</h3>
+        <div class="code-block">
+          <pre>
+        {
+          "dependencies": {
+            "react": "^18.2.0",
+            "express": "^4.18.2",
+            "prisma": "^4.8.0",
+            "@supabase/supabase-js": "^2.7.0",
+            "winston": "^3.8.2",
+            "jsonwebtoken": "^9.0.0"
+          }
+        }
+          </pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Bases de Datos</h2>
+
+      <div class="subsection">
+        <h3>Diagrama MER</h3>
+        <div class="mermaid">
+          erDiagram
+          USERS ||--o{ TRANSACTIONS : makes
+          USERS {
+            uuid id PK
+            string email
+            string password_hash
+            string role
+          }
+          TRANSACTIONS {
+            uuid id PK
+            uuid user_id FK
+            decimal amount
+            timestamp created_at
+          }
+          GAME_SESSIONS ||--|{ TRANSACTIONS : contains
+          GAME_SESSIONS {
+            uuid id PK
+            uuid user_id FK
+            timestamp start_time
+            timestamp end_time
+          }
+        </div>
+      </div>
+
+        <h3>Consultas comunes</h3>
+        <div class="code-block">
+          <pre>
+-- Transacciones por usuario
+SELECT u.email, COUNT(t.id) as tx_count, SUM(t.amount) as total
+FROM users u
+LEFT JOIN transactions t ON u.id = t.user_id
+GROUP BY u.id;
+
+-- Sesiones activas
+SELECT *
+FROM game_sessions
+WHERE end_time IS NULL;
+
+-- Análisis de ganancias por período
+SELECT 
+  DATE_TRUNC('day', created_at) as date,
+  SUM(amount) as daily_total
+FROM transactions
+GROUP BY DATE_TRUNC('day', created_at)
+ORDER BY date DESC;</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Mantenimiento Técnico</h2>
+
+      <div class="subsection">
+        <h3>Procedimientos para actualizaciones</h3>
+        <div class="code-block">
+          <pre>
+# Backend update
+git pull origin main
+npm install
+npm run migrate
+pm2 restart casino-api
+
+# Frontend update
+git pull origin main
+npm install
+npm run build
+vercel deploy</pre>
+        </div>
+
+        <h3>Monitoreo de rendimiento</h3>
+        <ul class="tech-list">
+          <li>New Relic para métricas de rendimiento</li>
+          <li>Grafana para visualización de datos</li>
+          <li>PagerDuty para gestión de alertas</li>
+          <li>Supabase Dashboard para monitoreo de base de datos</li>
+        </ul>
+
+        <h3>Gestión de logs</h3>
+        <div class="code-block">
+          <pre>
+// Logger configuration
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  defaultMeta: { service: 'casino-fortuna' },
+  transports: [
+    new winston.transports.File({ 
+      filename: 'error.log',
+      level: 'error'
+    }),
+    new winston.transports.File({ 
+      filename: 'combined.log'
+    }),
+    new winston.transports.Console({
+      format: winston.format.simple()
+    })
+  ],
+  exceptionHandlers: [
+    new winston.transports.File({ 
+      filename: 'exceptions.log'
+    })
+  ]
+});</pre>
+        </div>
+
+        <h3>Backups y recuperación</h3>
+        <ul class="tech-list">
+          <li>Respaldos automáticos diarios en Supabase</li>
+          <li>Replicación en tiempo real de la base de datos</li>
+          <li>Procedimientos de recuperación ante desastres</li>
+          <li>Pruebas periódicas de restauración</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Herramientas Técnicas Específicas</h2>
+
+      <div class="subsection">
+        <h3>Herramientas de Migración</h3>
+        <table>
+          <tr>
+            <th>Herramienta</th>
+            <th>Propósito</th>
+            <th>Uso en el Proyecto</th>
+          </tr>
+          <tr>
+            <td>Supabase CLI</td>
+            <td>Interfaz de línea de comandos para Supabase</td>
+            <td>Migración de datos y gestión de esquemas de base de datos</td>
+          </tr>
+          <tr>
+            <td>pg-migrate</td>
+            <td>Gestión de migraciones de PostgreSQL</td>
+            <td>Control de versiones de la base de datos</td>
+          </tr>
+          <tr>
+            <td>Apache NiFi</td>
+            <td>Automatización de flujo de datos</td>
+            <td>Procesos ETL y transformación de datos</td>
+          </tr>
+          <tr>
+            <td>pgAdmin</td>
+            <td>Herramienta de administración de PostgreSQL</td>
+            <td>Gestión y monitoreo de base de datos</td>
+          </tr>
+          <tr>
+            <td>Postman</td>
+            <td>Pruebas de API</td>
+            <td>Validación de endpoints y servicios</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <h3>Herramientas de Monitoreo</h3>
+        <table>
+          <tr>
+            <th>Herramienta</th>
+            <th>Propósito</th>
+            <th>Métricas Monitoreadas</th>
+          </tr>
+          <tr>
+            <td>Render Logs</td>
+            <td>Monitoreo de backend</td>
+            <td>Errores, latencia, uso de recursos</td>
+          </tr>
+          <tr>
+            <td>Supabase Insights</td>
+            <td>Analítica de base de datos</td>
+            <td>Rendimiento de queries, conexiones activas</td>
+          </tr>
+          <tr>
+            <td>Grafana</td>
+            <td>Visualización de métricas</td>
+            <td>Dashboards personalizados, alertas</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <div class="maintenance-section">
+      <h3>Procedimientos de Mantenimiento Específicos</h3>
+      
+      <div class="code-block">
+        <pre>
+# Verificación de integridad de datos
+CHECK TABLE usuarios EXTENDED;
+ANALYZE VERBOSE usuarios;
+
+# Optimización de índices
+REINDEX TABLE usuarios;
+VACUUM ANALYZE usuarios;
+
+# Monitoreo de conexiones
+SELECT * FROM pg_stat_activity;
+
+# Gestión de backups
+pg_dump -Fc mydatabase > backup.dump
+pg_restore -d newdb backup.dump
+        </pre>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 id="manual-usuario">Manual de Usuario</h2>
+
+      <div class="subsection">
+        <h3>Estructura del Manual de Usuario</h3>
+
+        <div class="subsection">
+          <h3>Descripción del software</h3>
+          <ul class="feature-list">
+            <li>Sistema integral de gestión para Casino la Fortuna</li>
+            <li>Plataforma web intuitiva y segura</li>
+            <li>Acceso desde cualquier dispositivo</li>
+            <li>Gestión en tiempo real de operaciones</li>
+            <li>Interfaz moderna y responsiva</li>
+          </ul>
+        </div>
+
+        <div class="subsection">
+          <h3>Público objetivo</h3>
+          <ul class="feature-list">
+            <li>Personal administrativo del casino</li>
+            <li>Operadores de juego (crupieres)</li>
+            <li>Supervisores de sala</li>
+            <li>Personal de seguridad</li>
+            <li>Gerentes y directivos</li>
+          </ul>
+        </div>
+
+        <div class="subsection">
+          <h3>Requisitos previos</h3>
+          <h4>Navegadores compatibles:</h4>
+          <ul class="feature-list">
+            <li>Google Chrome 90+</li>
+            <li>Firefox 88+</li>
+            <li>Safari 14+</li>
+            <li>Edge 90+</li>
+          </ul>
+
+          <h4>Conexión a Internet:</h4>
+          <ul class="feature-list">
+            <li>Estable, mínimo 5 Mbps</li>
+            <li>Recomendado: 10 Mbps</li>
+          </ul>
+
+          <h4>Resolución de pantalla:</h4>
+          <ul class="feature-list">
+            <li>Mínima: 1366x768</li>
+            <li>Recomendada: 1920x1080</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Primeros Pasos</h3>
+
+        <div class="subsection">
+          <h3>Acceso al sistema</h3>
+          <ol class="steps">
+            <li><strong>URL de acceso:</strong> 
+              <div class="interface-element">https://casino-la-fortuna.vercel.app/admin-dashboard</div>
+            </li>
+            <li><strong>Credenciales:</strong>
+              <ul>
+                <li>Usuario: correo electrónico</li>
+                <li>Contraseña temporal: cambio obligatorio en primer ingreso</li>
+              </ul>
+            </li>
+            <li><strong>Configuración inicial de perfil:</strong>
+              <ul>
+                <li>Cambio de contraseña</li>
+                <li>Verificación de correo electrónico</li>
+                <li>Configuración de autenticación de dos factores (2FA)</li>
+                <li>Personalización de preferencias</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="subsection">
+          <h3>Interfaz gráfica del usuario</h3>
+          <div class="user-interface">
+            <!-- Imagen reducida -->
+            <img src="https://i.ibb.co/3fXNT1f/casino-la-fortuna-vercel-app.png" alt="Interfaz principal del Casino la Fortuna" class="thumbnail" onclick="openModal()">
+        
+            <p class="note"><em>Imagen 1: Interfaz principal del sistema Casino la Fortuna</em></p>
+        
+            <!-- Modal para imagen ampliada -->
+            <div id="imageModal" class="modal" onclick="closeModal()">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="modalImage">
+              <div id="caption">Interfaz principal del sistema Casino la Fortuna</div>
+            </div>
+        
+            <h4>Elementos principales:</h4>
+            <ol>
+              <li><strong>Barra superior:</strong>
+                <ul class="feature-list">
+                  <li>Logo de Casino la Fortuna</li>
+                  <li>Menú principal</li>
+                  <li>Notificaciones</li>
+                  <li>Perfil de usuario</li>
+                  <li>Buscador rápido</li>
+                </ul>
+              </li>
+              <li><strong>Panel lateral:</strong>
+                <ul class="feature-list">
+                  <li>Dashboard</li>
+                  <li>Gestión de juegos</li>
+                  <li>Transacciones</li>
+                  <li>Reportes</li>
+                  <li>Configuración</li>
+                  <li>Ayuda y soporte</li>
+                </ul>
+              </li>
+              <li><strong>Área principal:</strong>
+                <ul class="feature-list">
+                  <li>Contenido dinámico según selección</li>
+                  <li>Tableros de control</li>
+                  <li>Formularios y listados</li>
+                  <li>Visualizaciones estadísticas</li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Funcionalidades Principales</h3>
+
+        <div class="subsection">
+          <h3>1. Gestión de Usuarios</h3>
+
+          <div class="feature-list">
+            <h4>Registro de usuario</h4>
+            <ol class="steps">
+              <li>Acceder al módulo "Usuarios"</li>
+              <li>Completar el formulario con información personal y roles</li>
+              <li>Asignar permisos específicos</li>
+              <li>Guardar cambios</li>
+              <li>Verificar cuenta por correo</li>
+            </ol>
+
+            <h4>Asignación de roles</h4>
+            <ul class="feature-list">
+              <li>Seleccionar usuario</li>
+              <li>Asignar permisos:
+                <ul>
+                  <li>Administrador</li>
+                  <li>Operador</li>
+                  <li>Cliente</li>
+                </ul>
+              </li>
+              <li>Confirmar cambios</li>
+              <li>Notificar al usuario</li>
+            </ul>
+
+            <h4>Desactivación de usuarios</h4>
+            <ul class="feature-list">
+              <li>Acceder al listado de usuarios</li>
+              <li>Seleccionar usuario objetivo</li>
+              <li>Marcar como "Inactivo"</li>
+              <li>Documentar razón del cambio</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>2. Gestión de Transacciones</h3>
+
+          <div class="feature-list">
+            <h4>Registro de nueva transacción</h4>
+            <ol class="steps">
+              <li>Clic en "Nueva Transacción"</li>
+              <li>Seleccionar tipo:
+                <ul>
+                  <li>Entrada</li>
+                  <li>Salida</li>
+                </ul>
+              </li>
+              <li>Ingresar datos:
+                <ul>
+                  <li>Monto</li>
+                  <li>Detalles</li>
+                  <li>Referencias</li>
+                </ul>
+              </li>
+              <li>Confirmar operación</li>
+              <li>Verificar registro</li>
+            </ol>
+
+            <h4>Consulta de transacciones</h4>
+            <ul class="feature-list">
+              <li>Acceder a "Historial"</li>
+              <li>Usar filtros:
+                <ul>
+                  <li>Por fecha</li>
+                  <li>Por tipo</li>
+                  <li>Por usuario</li>
+                </ul>
+              </li>
+              <li>Exportar resultados</li>
+              <li>Generar reportes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>3. Gestión de Máquinas Tragamonedas</h3>
+
+          <div class="feature-list">
+            <h4>Registro de dispositivos</h4>
+            <ol class="steps">
+              <li>Acceder al módulo "Máquinas"</li>
+              <li>Completar información:
+                <ul>
+                  <li>Tipo</li>
+                  <li>Marca</li>
+                  <li>Referencia</li>
+                  <li>Ubicación</li>
+                </ul>
+              </li>
+              <li>Asignar operador responsable</li>
+              <li>Configurar parámetros operativos</li>
+            </ol>
+
+            <h4>Monitoreo en tiempo real</h4>
+            <ul class="feature-list">
+              <li>Supervisar actividades</li>
+              <li>Gestionar alertas</li>
+              <li>Configurar mantenimientos</li>
+              <li>Seguimiento de rendimiento</li>
+            </ul>
+
+            <h4>Registro de movimientos</h4>
+            <ul class="feature-list">
+              <li>Documentar:
+                <ul>
+                  <li>Entradas</li>
+                  <li>Salidas</li>
+                  <li>Premios mayores</li>
+                </ul>
+              </li>
+              <li>Análisis de ganancias</li>
+              <li>Reportes de rendimiento</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>4. Generación de Reportes</h3>
+
+          <div class="feature-list">
+            <h4>Reportes diarios</h4>
+            <ol class="steps">
+              <li>Acceder a "Reportes"</li>
+              <li>Seleccionar tipo</li>
+              <li>Establecer parámetros</li>
+              <li>Generar documento</li>
+              <li>Exportar en formato deseado:
+                <ul>
+                  <li>PDF</li>
+                  <li>Excel</li>
+                  <li>CSV</li>
+                </ul>
+              </li>
+            </ol>
+
+            <h4>Reportes personalizados</h4>
+            <ul class="feature-list">
+              <li>Elegir módulos específicos</li>
+              <li>Definir rango de fechas</li>
+              <li>Seleccionar métricas</li>
+              <li>Configurar visualizaciones</li>
+              <li>Programar generación automática</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Funciones avanzadas</h3>
+          <ul class="feature-list">
+            <li>Personalización de dashboards</li>
+            <li>Configuración de alertas</li>
+            <li>Exportación automática de reportes</li>
+            <li>Gestión de usuarios subordinados</li>
+            <li>Automatización de tareas recurrentes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 id="problemas-comunes">Resolución de Problemas Comunes</h2>
+
+      <table>
+        <tr>
+          <th>Problema</th>
+          <th>Posible Causa</th>
+          <th>Solución</th>
+        </tr>
+        <tr>
+          <td>Error de inicio de sesión</td>
+          <td>Credenciales incorrectas</td>
+          <td>Verificar usuario/contraseña, usar "Olvidé mi contraseña"</td>
+        </tr>
+        <tr>
+          <td>Página no carga</td>
+          <td>Problemas de conexión</td>
+          <td>Verificar internet, limpiar caché del navegador</td>
+        </tr>
+        <tr>
+          <td>Reporte no genera</td>
+          <td>Datos incompletos</td>
+          <td>Revisar parámetros y filtros seleccionados</td>
+        </tr>
+        <tr>
+          <td>Error en transacción</td>
+          <td>Timeout o datos inválidos</td>
+          <td>Intentar nuevamente, verificar montos y detalles</td>
+        </tr>
+        <tr>
+          <td>Sesión expirada</td>
+          <td>Inactividad prolongada</td>
+          <td>Iniciar sesión nuevamente</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2 id="soporte-actualizaciones">Soporte y Actualizaciones</h2>
+
+      <div class="subsection">
+        <h3>Reportar problemas</h3>
+        <ul class="feature-list">
+          <li><strong>Email:</strong> soporte@casinofortuna.com</li>
+          <li><strong>WhatsApp:</strong> +57 315 272 8882</li>
+          <li><strong>Portal de soporte:</strong> help.casinofortuna.com</li>
+          <li><strong>Horario:</strong> 24/7</li>
+          <li><strong>Tiempo de respuesta:</strong> < 2 horas</li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3>Actualizaciones</h3>
+        <ul class="feature-list">
+          <li>Notificaciones en plataforma</li>
+          <li>Correos informativos</li>
+          <li>Calendario de mantenimientos</li>
+          <li>Notas de versión en portal</li>
+          <li>Historial de cambios</li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <h3>Recursos adicionales</h3>
+        <ul class="feature-list">
+          <li>Videos tutoriales</li>
+          <li>Base de conocimiento</li>
+          <li>Preguntas frecuentes</li>
+          <li>Comunidad de usuarios</li>
+          <li>Documentación técnica</li>
+          <li>Guías paso a paso</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 id="anexos">Anexos</h2>
+
+      <div class="subsection">
+        <h3>Anexo 1: Modelo Relacional</h3>
+        <div class="mermaid">
+          erDiagram
+          OPERADORES ||--o{ CLIENTES : gestiona
+          OPERADORES ||--o{ MAQUINAS : supervisa
+          OPERADORES ||--o{ JUEGOS_ONLINE : opera
+          OPERADORES ||--o{ APUESTAS : administra
+          CLIENTES ||--o{ RECAUDOS : genera
+          MAQUINAS ||--o{ RECAUDOS : produce
+          JUEGOS_ONLINE ||--o{ RECAUDOS : reporta
+          APUESTAS ||--o{ RECAUDOS : contiene
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Anexo 2: Diagramas de Arquitectura</h3>
+        <div class="mermaid">
+          graph TB
+          subgraph Frontend
+            R[React App] --> MUI[Material UI]
+            R --> Redux[Redux Toolkit]
+          end
+      
+          subgraph Backend
+            N[Node.js] --> EX[Express]
+            N --> Prisma[Prisma ORM]
+            N --> Auth[Auth Module]
+          end
+      
+          subgraph Database
+            Supabase --> PostgreSQL
+          end
+      
+          R --> N
+          N --> Supabase
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Anexo 3: Cronograma y Planificación</h3>
+        <div class="mermaid">
+          gantt
+              title Cronograma del Proyecto Casino la Fortuna
+              dateFormat YYYY-MM-DD
+              
+              section Planificación
+                  Análisis de requisitos       :done, req1, 2024-07-01, 2024-07-10
+                  Diseño de base de datos      :done, db1, 2024-07-11, 2024-07-20
+                  Configuración inicial        :active, cfg1, 2024-07-21, 2024-08-05
+      
+              section Desarrollo
+                  Desarrollo del Backend       :dev1, 2024-08-06, 2024-09-15
+                  Desarrollo del Frontend      :dev2, 2024-08-15, 2024-09-30
+                  Implementación de validaciones :dev3, 2024-09-01, 2024-09-20
+                  Pruebas unitarias y de integración :test1, 2024-09-16, 2024-09-25
+                  Ajustes finales y optimización :test2, 2024-09-26, 2024-10-05
+      
+              section Despliegue
+                  Pruebas de aceptación        :uat, 2024-10-06, 2024-10-10
+                  Documentación técnica final  :docs, 2024-10-11, 2024-10-15
+                  Configuración de hosting     :host, 2024-10-16, 2024-10-20
+                  Despliegue en producción     :depl, 2024-10-21, 2024-10-30
+        </div>
+      </div>
+
+      <section class="subsection">
+        <h3>Cronograma Completo</h3>
+        <div class="mermaid">
+          gantt
+              title Cronograma Completo del Proyecto Casino la Fortuna
+              dateFormat YYYY-MM-DD
+      
+              section Desarrollo
+                  Desarrollo del Backend       :dev1, 2024-08-06, 2024-09-15
+                  Desarrollo del Frontend      :dev2, 2024-08-15, 2024-09-30
+                  Implementación de validaciones :dev3, 2024-09-01, 2024-09-20
+                  Pruebas unitarias y de integración :test1, 2024-09-16, 2024-09-25
+                  Ajustes finales y optimización :test2, 2024-09-26, 2024-10-05
+      
+              section Despliegue
+                  Pruebas de aceptación        :uat, 2024-10-06, 2024-10-10
+                  Documentación técnica final  :docs, 2024-10-11, 2024-10-15
+                  Configuración de hosting     :host, 2024-10-16, 2024-10-20
+                  Despliegue en producción     :depl, 2024-10-21, 2024-10-30
+        </div>
+      </section>
+        <h3>Anexo 4: Registro de Cambios</h3>
+        <ul class="feature-list">
+          <li><strong>Versión 2.0.0 (Actual)</strong>
+            <ul>
+              <li>Implementación de autenticación de dos factores</li>
+              <li>Nuevo módulo de reportes avanzados</li>
+              <li>Mejoras en la interfaz de usuario</li>
+              <li>Optimización de consultas a base de datos</li>
+            </ul>
+          </li>
+          <li><strong>Versión 1.5.0</strong>
+            <ul>
+              <li>Integración con servicios de pago</li>
+              <li>Sistema de notificaciones en tiempo real</li>
+              <li>Mejoras en la seguridad del sistema</li>
+            </ul>
+          </li>
+          <li><strong>Versión 1.0.0</strong>
+            <ul>
+              <li>Lanzamiento inicial del sistema</li>
+              <li>Funcionalidades básicas de gestión</li>
+              <li>Módulos principales operativos</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 id="glosario">Glosario de Términos</h2>
+      <table>
+        <tr>
+          <th>Término/Acrónimo</th>
+          <th>Definición</th>
+          <th>Contexto en el Proyecto</th>
+        </tr>
+        <tr>
+          <td><strong>API</strong></td>
+          <td><em>Application Programming Interface</em>. Conjunto de reglas que permite la comunicación entre diferentes sistemas.</td>
+          <td>Integración con sistemas externos como Supabase, Stripe, y servicios de pago.</td>
+        </tr>
+        <tr>
+          <td><strong>Auth</strong></td>
+          <td>Módulo encargado de la autenticación y autorización en el sistema.</td>
+          <td>Garantiza que solo usuarios autorizados accedan al sistema.</td>
+        </tr>
+        <tr>
+          <td><strong>CI/CD</strong></td>
+          <td><em>Continuous Integration/Continuous Deployment</em>. Procesos automatizados para integrar y desplegar cambios de software.</td>
+          <td>Usado para mantener un flujo continuo de actualizaciones en el sistema.</td>
+        </tr>
+        <tr>
+          <td><strong>JWT</strong></td>
+          <td><em>JSON Web Token</em>. Protocolo para autenticar y asegurar la comunicación entre cliente y servidor.</td>
+          <td>Usado en la autenticación de usuarios del sistema.</td>
+        </tr>
+        <tr>
+          <td><strong>MFA</strong></td>
+          <td><em>Multi-Factor Authentication</em>. Autenticación que requiere múltiples métodos de verificación para acceder.</td>
+          <td>Configurado para roles administrativos y usuarios críticos.</td>
+        </tr>
+        <tr>
+          <td><strong>NPM</strong></td>
+          <td><em>Node Package Manager</em>. Herramienta para gestionar dependencias en proyectos Node.js.</td>
+          <td>Usado para instalar y mantener paquetes del backend y frontend.</td>
+        </tr>
+        <tr>
+          <td><strong>ORM</strong></td>
+          <td><em>Object-Relational Mapping</em>. Técnica para interactuar con bases de datos usando objetos en lugar de consultas SQL.</td>
+          <td>Prisma ORM facilita el acceso y la manipulación de datos en PostgreSQL.</td>
+        </tr>
+        <tr>
+          <td><strong>Pipeline</strong></td>
+          <td>Conjunto de pasos automatizados en un flujo de trabajo, como pruebas, compilaciones y despliegues.</td>
+          <td>Implementado en GitHub Actions para procesos CI/CD.</td>
+        </tr>
+        <tr>
+          <td><strong>Prisma</strong></td>
+          <td>Framework de ORM para Node.js que facilita la manipulación de bases de datos relacionales.</td>
+          <td>Usado para gestionar la conexión y operaciones en la base de datos PostgreSQL.</td>
+        </tr>
+        <tr>
+          <td><strong>React</strong></td>
+          <td>Librería de JavaScript para construir interfaces de usuario dinámicas y responsivas.</td>
+          <td>Framework principal utilizado en el frontend del sistema.</td>
+        </tr>
+        <tr>
+          <td><strong>Render</strong></td>
+          <td>Plataforma de alojamiento de backend que soporta aplicaciones Node.js, Python, y más.</td>
+          <td>Hospeda el backend del sistema *Casino la Fortuna*.</td>
+        </tr>
+        <tr>
+          <td><strong>Rollback</strong></td>
+          <td>Reversión de cambios en un sistema a un estado previo estable.</td>
+          <td>Procedimiento definido en caso de fallos críticos durante despliegues.</td>
+        </tr>
+        <tr>
+          <td><strong>Supabase</strong></td>
+          <td>Plataforma de backend como servicio que incluye base de datos, autenticación y almacenamiento.</td>
+          <td>Principal herramienta para base de datos, autenticación y backups del sistema.</td>
+        </tr>
+        <tr>
+          <td><strong>Token</strong></td>
+          <td>Cadena de caracteres que representa credenciales de acceso o información específica en un sistema.</td>
+          <td>Utilizado para autenticar solicitudes en el sistema.</td>
+        </tr>
+        <tr>
+          <td><strong>Transacción</strong></td>
+          <td>Operación registrada en el sistema que involucra cambios financieros o de datos.</td>
+          <td>Incluye registros de apuestas, recaudaciones y pagos.</td>
+        </tr>
+      </table>
+    </section>
+  </body>
+  
+  <script>
+    function openModal() {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      modal.style.display = 'block';
+      modalImage.src = document.querySelector('.thumbnail').src;
+    }
+  
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</html>
